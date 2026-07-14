@@ -442,7 +442,7 @@
 // un "1" después de "52" y volver a probar.
 // ============================================================
 const WHATSAPP_NUMBER = "529221757522";
-const WHATSAPP_MSG = "Hola 🐾 Vi el menú de Frida Gourmet y quiero hacer un pedido para llevar.";
+const WHATSAPP_MSG = "Hola \u{1F43E} Vi el men\u00fa de Frida Gourmet y quiero hacer un pedido para llevar.";
 
 // ============================================================
 // CIERRE EXCEPCIONAL (vacaciones, imprevistos, etc.)
@@ -929,7 +929,7 @@ document.getElementById('cartItems').addEventListener('click', (e)=>{
 document.getElementById('sendOrderBtn').addEventListener('click', ()=>{
   if(cartCount()===0) return;
   const lines = Object.values(CART).map(i=>`• ${i.name}${i.label?` (${i.label})`:''} x${i.qty} — $${i.price*i.qty}`);
-  const msg = `🐾 Pedido para Frida Gourmet\n\n${lines.join('\n')}\n\nTotal: $${cartTotal()}\n\n(Para llevar / en mesa — favor de confirmar)`;
+  const msg = `\u{1F43E} Pedido para Frida Gourmet\n\n${lines.join('\n')}\n\nTotal: $${cartTotal()}\n\n(Para llevar / en mesa — favor de confirmar)`;
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 });
 document.getElementById('fabWa').addEventListener('click', (e)=>{
